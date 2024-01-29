@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="E2E_CCW_TestCase" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="693.3333333333334,3504.6666666666665" sap2010:WorkflowViewState.IdRef="E2E_CCW_TestCase_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="E2E_CCW_TestCase" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="693.3333333333334,3188.6666666666665" sap2010:WorkflowViewState.IdRef="E2E_CCW_TestCase_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -147,18 +147,12 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="InitAllSettings.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Workflows\Common\InitAllSettings.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">
-                  <Literal x:TypeArguments="x:String">C:\Users\mankam\OneDrive - Cisco\CCW\E2E_CCW_Meraki\Data\Input\Config.xlsx</Literal>
-                </InArgument>
-                <InArgument x:TypeArguments="s:String[]" x:Key="in_ConfigSheets">
-                  <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;Settings&quot;,&quot;Constants&quot;,&quot;Assets&quot;}" />
-                </InArgument>
-                <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">
-                  <VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
-                </OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">C:\Users\mankam\OneDrive - Cisco\CCW\E2E_CCW_Meraki\Data\Input\Config.xlsx</InArgument>
+                <InArgument x:TypeArguments="s:String[]" x:Key="in_ConfigSheets">[{"Settings","Constants","Assets"}]</InArgument>
+                <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">[Config]</OutArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Init All settings success&quot;]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Init All settings success new&quot;]" />
           </Sequence>
           <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="540.6666666666666,2068" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
@@ -238,30 +232,14 @@
             </ui:MultipleAssign>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="E2E_CCW_Flow.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="478.6666666666667,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflows\E2E_CCW_Flow.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">
-                  <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
-                </InArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="out_PONumber">
-                  <VisualBasicReference x:TypeArguments="x:String" ExpressionText="strPONumber" />
-                </OutArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="boolRunSuccessAsset">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="boolRunSuccessAsset" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="SalesOrderAsset">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="SalesOrderAsset" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="strFinalReportPath">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strFinalHtmlReportPath" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_username">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Username" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_password">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Password" />
-                </InArgument>
-                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_CCW_FinalDT">
-                  <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="CCW_FinalDT" />
-                </OutArgument>
+                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">[Config]</InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_PONumber">[strPONumber]</OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="boolRunSuccessAsset">[boolRunSuccessAsset]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="SalesOrderAsset">[SalesOrderAsset]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="strFinalReportPath">[strFinalHtmlReportPath]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_username">[Username]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_password">[Password]</InArgument>
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_CCW_FinalDT">[CCW_FinalDT]</OutArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478.6666666666667,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Logs for Report generation started&quot;]">
@@ -282,26 +260,14 @@
             </ui:LogMessage>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GenerateJavaReport.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="478.6666666666667,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Workflows\Common\GenerateJavaReport.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="in_ReportPath">
-                  <Literal x:TypeArguments="x:String">C:\Users\mankam\OneDrive - Cisco\CCW\E2E_Cisco_POC\CCW\output\CCW_FinalReport_24-11-2023.xlsx</Literal>
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_ReportSheetname">
-                  <Literal x:TypeArguments="x:String">Results</Literal>
-                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ReportPath">C:\Users\mankam\OneDrive - Cisco\CCW\E2E_Cisco_POC\CCW\output\CCW_FinalReport_24-11-2023.xlsx</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ReportSheetname">Results</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
-                <InArgument x:TypeArguments="x:String" x:Key="in_PONumber">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strPONumber" />
-                </InArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="out_Ordernumber">
-                  <VisualBasicReference x:TypeArguments="x:String" ExpressionText="strFinalOrderNumber" />
-                </OutArgument>
-                <OutArgument x:TypeArguments="s:Exception" x:Key="out_Exception">
-                  <VisualBasicReference x:TypeArguments="s:Exception" ExpressionText="Java_ReportException" />
-                </OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_PONumber">[strPONumber]</InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_Ordernumber">[strFinalOrderNumber]</OutArgument>
+                <OutArgument x:TypeArguments="s:Exception" x:Key="out_Exception">[Java_ReportException]</OutArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="argument1" />
-                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt">
-                  <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="CCW_FinalDT" />
-                </InArgument>
+                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt">[CCW_FinalDT]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
             <uta:VerifyExpression AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="False" DisplayName="Verify Expression" Expression="[not String.IsNullOrEmpty(strFinalOrderNumber)]" sap:VirtualizedContainerService.HintSize="478.6666666666667,92" sap2010:WorkflowViewState.IdRef="VerifyExpression_1" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False" />
